@@ -1,13 +1,171 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.App {
+  font-family: sans-serif;
+  text-align: center;
+  background: white;
+  max-width: 600px;
+  margin: 30px auto;
+  padding: 30px;
+  box-shadow: rgba(65, 50, 100, 0.08) 0px 30px 50px 0px;
+  border-radius: 16px;
+  width: 90%;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  background: #e7eaf6;
+  font-family: "Roboto", serif;
+  margin: 0;
+  padding: 0;
+}
+a {
+  color: #34495e;
+}
+
+header {
+  border-bottom: 1px solid #f9f7fe;
+  padding: 0 0 20px 0;
+}
+.search-form {
+  display: flex;
+  flex-direction: column;
+}
+.search-form-input {
+  background: #e7eaf6;
+  border: none;
+  width: 100%;
+  padding: 15px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+.search-form-button {
+  background: #34495e;
+  padding: 15px 20px;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  font-size: 12px;
+}
+
+main {
+  padding: 30px 0px;
+}
+.weather-app-data {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.weather-app-city {
+  margin: 0;
+  font-size: 24px;
+}
+
+.weather-app-details {
+  font-size: 1;
+  line-height: 24px;
+  color: rgba(39, 33, 66, 0.4);
+  font-weight: 500;
+}
+
+.weather-app-details strong {
+  color: rgb(246, 82, 130);
+}
+
+.weather-app-temperature-container {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.weather-app-temperature-value {
+  font-size: 48px;
+  line-height: 1;
+  font-weight: 700;
+}
+.weather-app-icon {
+  width: 88px;
+  height: 88px;
+}
+
+.weather-app-temperature-unit {
+  margin-top: 0;
+  font-size: 18px;
+  line-height: 1;
+}
+
+.weather-forecast {
+  display: flex;
+  justify-content: space-between;
+  overflow-x: auto;
+  margin-top: 30px;
+  gap: 1 rem;
+}
+.weather-forecast-date {
+  text-align: center;
+  color: rgba(39, 33, 66, 0.4);
+  font-size: 16px;
+  line-height: 20px;
+}
+.weather-forecast-icon {
+  width: 88px;
+  height: 88px;
+  display: block;
+  margin: 0 auto;
+}
+.weather-forecast-temperatures {
+  text-align: center;
+  color: rgb(246, 82, 130);
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.weather-forecast-temperature {
+  padding: 0 10px;
+}
+
+.weather-forecast-day {
+  flex: 0 0 auto; /* Prevents items from shrinking */
+  width: 120px; /* Adjust width as needed */
+
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 2px 4px;
+  scroll-snap-align: start; /* Optional: Aligns items to start on scroll snap */
+}
+footer {
+  border-top: 1px solid #f9f7fe;
+  padding: 20px 0 0 0;
+  font-size: 12px;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+@media (max-width: 600px) {
+  .weather-app-data {
+    display: flex;
+    flex-direction: row; /* Keep elements side-by-side */
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .weather-app-temperature-container {
+    flex-direction: row; /* Horizontal layout for temperature and icon */
+    align-items: center; /* Center alignment */
+  }
+
+  .weather-forecast {
+    display: flex;
+    overflow-x: auto; /* Enable horizontal scrolling if needed */
+    flex-direction: row; /* Maintain horizontal layout */
+    justify-content: space-between;
+    gap: 10px; /* Small spacing between forecast items */
+  }
+
+  .weather-forecast-day {
+    min-width: 70px; /* Width to fit individual forecast items */
+    text-align: center; /* Center items within each day */
+  }
 }
