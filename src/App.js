@@ -26,7 +26,7 @@ function App() {
         </a>
         open-sourced on
         <a
-          href="https://github.com/xorsx/weather-app-project"
+          href="https://github.com/xorsx/weather-react"
           target="_blank"
           rel="noreferrer"
         >
@@ -34,7 +34,7 @@ function App() {
         </a>
         and hosted on
         <a
-          href="https://coding-project-weather-app.netlify.app/"
+          href="https://famous-lily-90279c.netlify.app/"
           target="_blank"
           rel="noreferrer"
         >
