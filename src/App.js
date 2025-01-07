@@ -21,17 +21,22 @@ function App() {
       <Weather />
       <footer>
         Built by
-        <a href="https://github.com/xorsx" target="_blank">
+        <a href="https://github.com/xorsx" target="_blank" rel="noreferrer">
           Olivia Swann
         </a>
         open-sourced on
-        <a href="https://github.com/xorsx/weather-app-project" target="_blank">
+        <a
+          href="https://github.com/xorsx/weather-app-project"
+          target="_blank"
+          rel="noreferrer"
+        >
           Github
         </a>
         and hosted on
         <a
           href="https://coding-project-weather-app.netlify.app/"
           target="_blank"
+          rel="noreferrer"
         >
           Netlify
         </a>
