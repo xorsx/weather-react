@@ -1,4 +1,3 @@
-import "./App.css";
 import Weather from "./Weather";
 import "./index.css";
 import "./Weather.css";
@@ -20,19 +19,19 @@ function App() {
       </header>
       <Weather />
       <footer>
-        Built by
+        Built by{" "}
         <a href="https://github.com/xorsx" target="_blank" rel="noreferrer">
           Olivia Swann
-        </a>
-        open-sourced on
+        </a>{" "}
+        open-sourced on{" "}
         <a
           href="https://github.com/xorsx/weather-react"
           target="_blank"
           rel="noreferrer"
         >
           Github
-        </a>
-        and hosted on
+        </a>{" "}
+        and hosted on{" "}
         <a
           href="https://famous-lily-90279c.netlify.app/"
           target="_blank"
