@@ -17,7 +17,7 @@ function App() {
           <input type="submit" value="Search" className="search-form-button" />
         </form>
       </header>
-      <Weather />
+      <Weather defaultCity="New York" />
       <footer>
         Built by{" "}
         <a href="https://github.com/xorsx" target="_blank" rel="noreferrer">
