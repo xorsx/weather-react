@@ -17,7 +17,7 @@ body {
   padding: 0;
 }
 a {
-  color: #34495e;
+  text-decoration: none;
 }
 
 header {
@@ -79,7 +79,7 @@ main {
 }
 
 .weather-app-temperature-value {
-  font-size: 48px;
+  font-size: 52px;
   line-height: 1;
   font-weight: 700;
 }
@@ -88,9 +88,13 @@ main {
 }
 
 .weather-app-temperature-unit {
-  margin-top: 0;
-  font-size: 18px;
+  font-size: 24px;
   line-height: 1;
+}
+
+.weather-app-temperature-unit a.active {
+  text-decoration: none;
+  color: aqua;
 }
 
 .weather-forecast {
