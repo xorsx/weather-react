@@ -52,8 +52,6 @@ main {
 .weather-app-data {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
 }
 
 .weather-app-city {
@@ -65,7 +63,7 @@ main {
 
 .weather-app-details {
   font-size: 1;
-  line-height: 24px;
+  line-height: 12px;
   color: rgba(39, 33, 66, 0.4);
   font-weight: 500;
   text-align: start;
@@ -78,7 +76,6 @@ main {
 .weather-app-temperature-container {
   display: flex;
   align-items: center;
-  margin-top: 10px;
 }
 
 .weather-app-temperature-value {
@@ -86,9 +83,8 @@ main {
   line-height: 1;
   font-weight: 700;
 }
-.weather-app-icon {
-  width: 88px;
-  height: 88px;
+.weather-app-icon canvas {
+  margin: 10px;
 }
 
 .weather-app-temperature-unit {
@@ -98,6 +94,7 @@ main {
 }
 
 .weather-forecast {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   display: flex;
   justify-content: space-between;
   overflow-x: auto;

@@ -1,10 +1,14 @@
 import React, { useState } from "react";
+import WeatherInfo from "./WeatherInfo";
 import axios from "axios";
-import FormattedDate from "./FormattedDate";
+import "./index.css";
 
-export default function Weather() {
+export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
+  const [city, setCity] = useState(props.defaultCity);
+
   function handleResponse(response) {
+    console.log("API icon_url:", response.data.condition.icon_url);
     setWeatherData({
       ready: true,
       temperature: response.data.temperature.current,
@@ -12,57 +16,55 @@ export default function Weather() {
       city: response.data.city,
       humidity: response.data.temperature.humidity,
       description: response.data.condition.description,
-      iconUrl:
-        "http://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-night.png",
+      icon: response.data.condition.icon_url,
       date: new Date(response.data.time * 1000),
     });
   }
 
-  if (weatherData.ready) {
-    return (
-      <main>
-        <div className="weather-app-data">
-          <div>
-            <h1 className="weather-app-city">{weatherData.city}</h1>
-            <p className="weather-app-details">
-              <span>
-                <FormattedDate date={weatherData.date} />
-              </span>
-              <br />
-              Humidity: <strong>{weatherData.humidity}%</strong> Wind:
-              <strong>{Math.round(weatherData.wind)}mph</strong>
-            </p>
-          </div>
-          <div className="weather-app-temperature-container">
-            <div>
-              <img src={weatherData.iconUrl} alt="weather icon" />
-            </div>
-            <div className="weather-app-temperature-value">
-              {Math.round(weatherData.temperature)}
-            </div>
-            <div className="weather-app-temperature-unit">°F</div>
-          </div>
-        </div>
-
-        <div className="weather-forecast">{weatherData.description}</div>
-      </main>
-    );
-  } else {
+  function search() {
     const apiKey = "e7fo6tea7dab2f64b9d0694388b0ea0f";
-    let city = "New York";
+
     let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=imperial`;
     axios.get(apiUrl).then(handleResponse);
-
-    return "Loading...";
+  }
+  function handleSubmit(event) {
+    event.preventDefault();
+    search(city);
   }
 
-  // let weatherData = {
-  //   city: "Denver",
-  //   humidity: 20,
-  //   wind: 15,
-  //   temperature: 45,
-  //   forecast: "Snowy",
-  //   datetime: "Last updated: Wednesday 5:30p.m.",
-  //   icon: "",
-  // };
+  function handleCityChange(event) {
+    setCity(event.target.value);
+  }
+
+  if (weatherData.ready) {
+    return (
+      <div>
+        <header>
+          <form
+            onSubmit={handleSubmit}
+            className="search-form"
+            id="search-form"
+          >
+            <input
+              type="search"
+              placeholder="Enter a city..."
+              required
+              className="search-form-input"
+              id="search-input"
+              onChange={handleCityChange}
+            />
+            <input
+              type="submit"
+              value="Search"
+              className="search-form-button"
+            />
+          </form>
+        </header>
+        <WeatherInfo data={weatherData} />
+      </div>
+    );
+  } else {
+    search();
+    return "Loading...";
+  }
 }
