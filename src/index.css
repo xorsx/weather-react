@@ -71,6 +71,12 @@ main {
 
 .weather-app-details strong {
   color: rgb(246, 82, 130);
+  line-height: 12px;
+}
+
+.weather-app-details .humidity {
+  padding: 5px;
+  text-align: start;
 }
 
 .weather-app-temperature-container {

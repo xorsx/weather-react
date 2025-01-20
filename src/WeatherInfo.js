@@ -15,8 +15,13 @@ export default function WeatherInfo(props) {
                 <FormattedDate date={props.data.date} />
               </span>
               <br />
-              Humidity: <strong>{props.data.humidity}%</strong> Wind:
-              <strong>{Math.round(props.data.wind)}mph</strong>
+              <div className="humidity">
+                Humidity: <strong>{props.data.humidity}%</strong>
+              </div>
+              <div className="wind">
+                Wind:
+                <strong>{Math.round(props.data.wind)}mph</strong>
+              </div>
             </div>
           </div>
           <div className="weather-app-temperature-container">
