@@ -1,78 +1,65 @@
-/* .Weather main {
-  padding: 30px 0px;
-}
-.Weather .weather-app-data {
-  display: flex;
+.WeatherInfo {
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 20px;
+  margin: 20px;
 }
 
-.Weather .weather-app-city {
-  margin: 0;
-  font-size: 96px;
+.weather-app-city {
+  font-size: 36px;
+  font-weight: bold;
+  text-align: start;
 }
 
-.Weather .weather-app-details {
+.weather-app-data {
+  align-items: center;
+}
+
+.weather-app-data ul {
+  list-style: none;
+  text-align: start;
+
+  padding: 0;
+}
+
+.weather-app-details {
+  margin: 10px;
   font-size: 1;
-  line-height: 24px;
+  line-height: 1;
   color: rgba(39, 33, 66, 0.4);
   font-weight: 500;
+  text-align: start;
 }
 
-.Weather .weather-app-details strong {
-  color: rgb(246, 82, 130);
+.weather-app-details ul {
+  list-style: none;
 }
 
-.Weather .weather-app-temperature-container {
+.weather-app-details strong {
+  color: darkblue;
+  line-height: 12px;
+}
+
+.weather-app-temperature-container {
   display: flex;
   align-items: center;
-  margin-top: 10px;
+  margin-left: auto;
 }
 
-.Weather .weather-app-temperature-value {
-  font-size: 48px;
+.weather-app-temperature-value {
+  font-size: 52px;
   line-height: 1;
   font-weight: 700;
 }
-.Weather .weather-app-icon {
-  width: 88px;
-  height: 88px;
+.weather-app-icon canvas {
+  margin: 10px;
 }
 
-.Weather .weather-app-temperature-unit {
-  margin-top: 0;
-  font-size: 18px;
+.weather-app-temperature-unit {
+  font-size: 24px;
   line-height: 1;
 }
 
-.Weather .weather-forecast {
-  display: flex;
-  justify-content: space-between;
-  overflow-x: auto;
-  margin-top: 30px;
-  gap: 1 rem;
+.weather-app-temperature-unit a.active {
+  text-decoration: none;
+  color: aqua;
 }
-.Weather .weather-forecast-date {
-  text-align: center;
-  color: rgba(39, 33, 66, 0.4);
-  font-size: 16px;
-  line-height: 20px;
-}
-.Weather .weather-forecast-icon {
-  width: 88px;
-  height: 88px;
-  display: block;
-  margin: 0 auto;
-}
-.Weather .weather-forecast-temperatures {
-  text-align: center;
-  color: rgb(246, 82, 130);
-  margin-top: 10px;
-  display: flex;
-  justify-content: center;
-}
-
-.Weather .weather-forecast-temperature {
-  padding: 0 10px;
-} */
