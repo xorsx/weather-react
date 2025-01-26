@@ -5,6 +5,10 @@ import WeatherIcon from "./WeatherIcon";
 import WeatherTemperature from "./WeatherTemperature";
 
 export default function WeatherInfo(props) {
+  console.log("Inside WeatherInfo component:");
+  console.log("props.data object:", props.data);
+  console.log("Temperature (current):", props.data.temperature.current);
+
   return (
     <div className="WeatherInfo d-flex">
       <div className="weather-app-data">
@@ -38,7 +42,7 @@ export default function WeatherInfo(props) {
             size={52}
           />
         </div>
-        <WeatherTemperature celcius={props.data.temperature} />
+        <WeatherTemperature fahrenheit={props.data.temperature} />
       </div>
     </div>
   );
