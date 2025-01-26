@@ -10,9 +10,9 @@ export default function Weather(props) {
   const [city, setCity] = useState(props.defaultCity);
 
   function handleResponse(response) {
-    console.log("API icon_url:", response.data.condition.icon_url);
     setWeatherData({
       ready: true,
+      coordinates: response.data.coordinates,
       temperature: response.data.temperature.current,
       wind: response.data.wind.speed,
       city: response.data.city,
@@ -26,7 +26,7 @@ export default function Weather(props) {
   function search() {
     const apiKey = "e7fo6tea7dab2f64b9d0694388b0ea0f";
 
-    let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
+    let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=imperial`;
     axios.get(apiUrl).then(handleResponse);
   }
   function handleSubmit(event) {
@@ -54,7 +54,7 @@ export default function Weather(props) {
         </form>
 
         <WeatherInfo data={weatherData} />
-        <Forecast />
+        <Forecast coordinates={weatherData.coordinates} />
       </div>
     );
   } else {
