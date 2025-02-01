@@ -1,7 +1,7 @@
 .App {
   font-family: sans-serif;
   text-align: center;
-  background: white;
+  background: #f2fcfb;
   max-width: 600px;
   margin: 30px auto;
   padding: 30px;
@@ -11,10 +11,14 @@
 }
 
 body {
-  background: #e7eaf6;
+  background-image: url("7d753d685242fd13602dde865a2a6c0c.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
   font-family: "Roboto", serif;
-  margin: 0;
-  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 a {
   text-decoration: none;
@@ -36,16 +40,17 @@ footer {
 .search-form {
   display: flex;
   flex-direction: column;
+  gap: 10px;
 }
 .search-form-input {
   background: #e7eaf6;
   border: none;
   width: 100%;
-  padding: 15px 10px;
+  padding: 15px;
   border-radius: 6px;
   font-size: 12px;
-  margin-bottom: 10px;
 }
+
 .search-form-button {
   background: #34495e;
   padding: 15px 20px;
@@ -53,75 +58,26 @@ footer {
   border-radius: 6px;
   color: white;
   font-size: 18px;
+  cursor: pointer;
+  transition: background 0.3s;
 }
 
-/* .weather-forecast {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  display: flex;
-  justify-content: space-between;
-  overflow-x: auto;
-  margin-top: 30px;
-  gap: 1 rem;
-  text-transform: capitalize;
-}
-.weather-forecast-date {
-  text-align: center;
-  color: rgba(39, 33, 66, 0.4);
-  font-size: 16px;
-  line-height: 20px;
-}
-.weather-forecast-icon {
-  width: 88px;
-  height: 88px;
-  display: block;
-  margin: 0 auto;
-}
-.weather-forecast-temperatures {
-  text-align: center;
-  color: rgb(246, 82, 130);
-  margin-top: 10px;
-  display: flex;
-  justify-content: center;
+.search-form-button:hover {
+  background: #2c3e50;
 }
 
-.weather-forecast-temperature {
-  padding: 0 10px;
-}
-
-.weather-forecast-day {
-  flex: 0 0 auto;
-  width: 120px;
-
-  padding: 1rem;
-  border-radius: 8px;
-  text-align: center;
-  box-shadow: rgba(0, 0, 0, 0.05) 0px 2px 4px;
-  scroll-snap-align: start;
-}
-
-@media (max-width: 600px) {
-  .weather-app-data {
-    display: flex;
+/* Make search form horizontal on larger screens */
+@media (min-width: 768px) {
+  .search-form {
     flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
   }
 
-  .weather-app-temperature-container {
-    flex-direction: row;
-    align-items: center;
+  .search-form-input {
+    flex: 1;
+    margin-bottom: 0;
   }
 
-  .weather-forecast {
-    display: flex;
-    overflow-x: auto;
-    flex-direction: row;
-    justify-content: space-between;
-    gap: 10px;
+  .search-form-button {
+    width: auto;
   }
-
-  .weather-forecast-day {
-    min-width: 70px;
-    text-align: center;
-  }
-} */
+}

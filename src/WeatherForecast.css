@@ -1,21 +1,89 @@
 .WeatherForecast {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
   text-align: center;
+  gap: 10px;
+  padding: 10px;
 }
 
 .WeatherForecast-temperatures {
-  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 12px;
 }
 
 .WeatherForecast-temperature-min {
   opacity: 50%;
   margin: 5px 5px;
+  font-size: 12px;
 }
 
 .WeatherForecast-temperature-max {
   font-weight: bold;
+  font-size: 14px;
 }
 
 .WeatherForecast-day {
   font-weight: bold;
   opacity: 50%;
+  font-size: 14px;
+}
+
+.WeatherForecast-icon {
+  width: 36px; /* Standard size for mobile */
+  height: 36px;
+  margin-bottom: 5px;
+}
+
+/* Media query for mobile screens */
+@media (max-width: 768px) {
+  .WeatherForecast {
+    justify-content: space-around; /* Adjust spacing for smaller screens */
+  }
+
+  .WeatherForecast-item {
+    width: 20%; /* Adjust column width on smaller screens */
+  }
+
+  .WeatherForecast-day {
+    font-size: 12px;
+  }
+
+  .WeatherForecast-temperature-max,
+  .WeatherForecast-temperature-min {
+    font-size: 12px;
+  }
+
+  .WeatherForecast-icon {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+/* Media query for very small screens (mobile phones) */
+@media (max-width: 480px) {
+  .WeatherForecast {
+    flex-direction: column; /* Stack the forecast items vertically on very small screens */
+  }
+
+  .WeatherForecast-item {
+    width: 100%; /* Allow items to take up the full width on very small screens */
+  }
+
+  .WeatherForecast-day {
+    font-size: 10px;
+  }
+
+  .WeatherForecast-temperature-max,
+  .WeatherForecast-temperature-min {
+    font-size: 10px;
+  }
+
+  .WeatherForecast-icon {
+    width: 24px;
+    height: 24px;
+  }
 }
